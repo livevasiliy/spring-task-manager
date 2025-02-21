@@ -1,0 +1,12 @@
+services:
+  database:
+    image: postgres:17.3-alpine
+    restart: always
+    ports:
+      - published: 5432
+        target: 5432
+        protocol: tcp
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
